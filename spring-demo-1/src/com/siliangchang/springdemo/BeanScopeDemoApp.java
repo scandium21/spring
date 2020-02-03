@@ -19,9 +19,9 @@ public class BeanScopeDemoApp {
 		// will call toString() on theCoach, the default toString will return classname + memory address
 		System.out.println("\nMemory location for theCoach: " + theCoach);
 		System.out.println("\nMemory location for alphaCoach: " + alphaCoach + "\n");
-		//Pointing to the same object: true
-		//Memory location for theCoach: com.siliangchang.springdemo.TrackCoach@6f27a732
-		//Memory location for alphaCoach: com.siliangchang.springdemo.TrackCoach@6f27a732
+		// Pointing to the same object: false
+		// Memory location for theCoach: com.siliangchang.springdemo.TrackCoach@6f27a732
+		// Memory location for alphaCoach: com.siliangchang.springdemo.TrackCoach@6c779568
 		
 		// close context
 		context.close();
