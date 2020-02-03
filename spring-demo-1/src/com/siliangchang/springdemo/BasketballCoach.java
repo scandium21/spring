@@ -5,4 +5,10 @@ public class BasketballCoach implements Coach {
 	public String getDailyWorkout() {
 		return "Dribble with left hand for 30min";
 	}
+
+	@Override
+	public String getDailyFortune() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
