@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class TennisCoach implements Coach {
 	
 	@Autowired
-	@Qualifier("happyFortuneService") // default bean ID: classname with lowercase first letter 
+	@Qualifier("randomFortuneService") // default bean ID: classname with lowercase first letter 
 	private FortuneService fortuneService;
 	
 	// default constructor
