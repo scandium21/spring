@@ -6,14 +6,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import javax.annotation.PostConstruct;
+
 @Component
 public class FileFortuneService implements FortuneService {
 	
 	private String fileName = "C:\\Users\\Siliang\\Desktop\\fortunes.txt";
 	private List<String> fortuneList;
 	private Random myRand = new Random();
-
-	public FileFortuneService() {
+	
+	@PostConstruct
+	public void readFortuneFile() {
 		File list = new File(fileName);
 		System.out.println("Reading fortunes from file: " + list);
 		System.out.println("File exists: " + list.exists());
@@ -29,6 +32,10 @@ public class FileFortuneService implements FortuneService {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public FileFortuneService() {
+		
 	}
 	
 	@Override

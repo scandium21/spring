@@ -1,12 +1,14 @@
 package com.siliangchang.springdemo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope("prototype")
 public class TennisCoach implements Coach {
 	
 	@Autowired
@@ -16,6 +18,19 @@ public class TennisCoach implements Coach {
 	// default constructor
 	public TennisCoach() {
 		System.out.println(">> TennisCoach: inside default constructor");
+	}
+	
+	// define my init method
+	// code will execute after constructor and after injection of dependencies
+	@PostConstruct
+	public void doStartUpStuff() {
+		System.out.println(">> TennicCoach: inside of doStartUpStuff");
+	}
+	
+	// define my destroy method
+	@PreDestroy
+	public void doCleanUpStuff() {
+		System.out.println(">> TennicCoach: inside of doCleanUpStuff");
 	}
 	
 	/* @Autowired
